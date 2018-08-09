@@ -287,7 +287,7 @@ client.on('message', message => {
     }
 });
 
-const devs = ['312992639395954689' , 'id 2' , 'id 3' , 'id 4'];
+
 const adminprefix = "#";
 client.on('message', message => {
     var argresult = message.content.split(` `).slice(1).join(' ');
