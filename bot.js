@@ -205,154 +205,29 @@ const Sra7a = [
  }
 });
 
-client.on('message', message => {
-    if (message.author.bot) return;
-     if (message.content === prefix + "help-en") {
-		 message.channel.send('**The Message Was Sent On Private**');
-            
-	
-		 
-
-
- message.author.sendMessage(`
- **
-
-╔[❖════════════❖]╗
-             Prefix = ' # '
-╚[❖════════════❖]╝
-
-╔[❖════════════❖]╗
-             Admin Commands
-╚[❖════════════❖]╝
-
- ❖ *kick <mention > ➾ kick member from server
-
- ❖ *clear ➾ clear chat ( not ready yet fixing)
- 
- ❖ *mute < mention > ➾ mute member
-
- ❖ *unmute <mention> ➾ unmute member
-
- ❖ *ct <name> ➾ create channel
-
- ❖ *cv <name> create voice channel
-  
- ❖ *bc <message> ➾ message all members in server
-
-
-╔[❖════════════❖]╗
-            General  Commands
-╚[❖════════════❖]╝
-
-❖ #roll <number> ➾ role 
-
-❖ #date ➾ see date
-
-❖ *member ➾ members info
-
-❖ #ser-av ➾ server avatar
-
-❖ #uptime ➾ to see uptime
-
-❖ #invs ➾ server invite link
-
-❖ #own ➾ bot owner
-
-❖ #id ➾ your id
-
-❖ #avatar ➾ your avatar account
-
-❖ #help-en ➾ help by arabic
-
-❖ #help-en ➾ help by english
-
-❖ #ping ➾ to see ping
-
-❖ #bot ➾ bot informations 
-
-❖ #server ➾ server informations 
-
-❖ #invite ➾ bot invite link
-
-╔[❖════════════❖]╗
-                    Welcome
-╚[❖════════════❖]╝
-
-**
-
-
-
-`);
-
-    }
-});
-
-
 const adminprefix = "#";
 const devs = ['312992639395954689',''];
 client.on('message', message => {
-  var argresult = message.content.split(`).slice(1).join(' ');
+  var argresult = message.content.split(` `).slice(1).join(' ');
     if (!devs.includes(message.author.id)) return;
     
 if (message.content.startsWith(adminprefix + 'setgame')) {
  client.user.setGame(argresult);
-    message.channel.sendMessage(${argresult} تم تغيير بلاينق البوت إلى )
+    message.channel.sendMessage(`**${argresult} تم تغيير بلاينق البوت إلى **`)
 } else 
   if (message.content.startsWith(adminprefix + 'setname')) {
 client.user.setUsername(argresult).then
-    message.channel.sendMessage(${argresult} : تم تغيير أسم البوت إلى)
+    message.channel.sendMessage(`**${argresult}** : تم تغيير أسم البوت إلى`)
 return message.reply("**لا يمكنك تغيير الاسم يجب عليك الانتظآر لمدة ساعتين . **");
 } else
   if (message.content.startsWith(adminprefix + 'setavatar')) {
 client.user.setAvatar(argresult);
-  message.channel.sendMessage(${argresult} : تم تغير صورة البوت);
+  message.channel.sendMessage(`**${argresult}** : تم تغير صورة البوت`);
       } else     
 if (message.content.startsWith(adminprefix + 'setT')) {
   client.user.setGame(argresult, "https://www.twitch.tv/idk");
-    message.channel.sendMessage(تم تغيير تويتش البوت إلى  ${argresult}`)
+    message.channel.sendMessage(`**تم تغيير تويتش البوت إلى  ${argresult}**`)
 }
-
-});
--[$]ťℜøẍ.?♔Today at 10:13 PM
-@Emoko شكرا
-RAIVOToday at 10:13 PM
-@D7oM. 
-client.on('message', ( message ) => {
-  if(message.author.bot) return;
-
-  if(message.channel.id !== 'ID') return;
-
-
-  let types = [
-    'jpg',
-    'jpeg',
-    'png'
-  ]
-
-  if (message.attachments.size <= 0) {
-    message.delete();
-    message.channel.send(`${message.author}, This channel for Pic 🖼️ Only`) // 
-    .then(msg => {
-      setTimeout(() => {
-        msg.delete();
-      }, 5000)
-  })
-  return;
-}
-
-  if(message.attachments.size >= 1) {
-    let filename = message.attachments.first().filename
-    console.log(filename);
-    if(!types.some( type => filename.endsWith(type) )) {
-      message.delete();
-      message.channel.send(`${message.author}, This channel for Pic 🖼️ Only`)
-      .then(msg => {
-        setTimeout(() => {
-          msg.delete();
-        }, 5000)
-      })
-    }
-  }
 
 });
 
