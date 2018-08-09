@@ -204,7 +204,6 @@ const Sra7a = [
    message.react("🤔")
  }
 });
-
 const adminprefix = "#";
 const devs = ['312992639395954689',''];
 client.on('message', message => {
