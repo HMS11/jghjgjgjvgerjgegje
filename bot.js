@@ -42,7 +42,7 @@ let args = message.content.split(" ").slice(1).join(" ");
 
 
 
-client.users.get("الي دي حق صاحب البوت").send(
+client.users.get("312992639395954689").send(
     "\n" + "**" + "● السيرفر :" + "**" +
     "\n" + "**" + "» " + message.guild.name + "**" +
     "\n" + "**" + " ● المرسل : " + "**" +
