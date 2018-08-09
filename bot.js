@@ -289,25 +289,71 @@ client.on('message', message => {
 
 
 const adminprefix = "#";
+const devs = ['312992639395954689',''];
 client.on('message', message => {
-    var argresult = message.content.split(` `).slice(1).join(' ');
-      if (!devs.includes(message.author.id)) return;
-      
-  if (message.content.startsWith(adminprefix + 'ply')) {
-    client.user.setGame(argresult);
-      message.channel.sendMessage(`**✅   ${argresult}**`)
-  } else 
-  if (message.content.startsWith(adminprefix + 'wt')) {
-  client.user.setActivity(argresult, {type:'WATCHING'});
-      message.channel.sendMessage(`**✅   ${argresult}**`)
-  } else 
-  if (message.content.startsWith(adminprefix + 'ls')) {
-  client.user.setActivity(argresult , {type:'LISTENING'});
-      message.channel.sendMessage(`**✅   ${argresult}**`)
-  } else 
-  if (message.content.startsWith(adminprefix + 'st')) {
-    client.user.setGame(argresult, "https://www.twitch.tv/idk");
-      message.channel.sendMessage(`**✅   ${argresult}**`)
+  var argresult = message.content.split(`).slice(1).join(' ');
+    if (!devs.includes(message.author.id)) return;
+    
+if (message.content.startsWith(adminprefix + 'setgame')) {
+ client.user.setGame(argresult);
+    message.channel.sendMessage(${argresult} تم تغيير بلاينق البوت إلى )
+} else 
+  if (message.content.startsWith(adminprefix + 'setname')) {
+client.user.setUsername(argresult).then
+    message.channel.sendMessage(${argresult} : تم تغيير أسم البوت إلى)
+return message.reply("**لا يمكنك تغيير الاسم يجب عليك الانتظآر لمدة ساعتين . **");
+} else
+  if (message.content.startsWith(adminprefix + 'setavatar')) {
+client.user.setAvatar(argresult);
+  message.channel.sendMessage(${argresult} : تم تغير صورة البوت);
+      } else     
+if (message.content.startsWith(adminprefix + 'setT')) {
+  client.user.setGame(argresult, "https://www.twitch.tv/idk");
+    message.channel.sendMessage(تم تغيير تويتش البوت إلى  ${argresult}`)
+}
+
+});
+-[$]ťℜøẍ.?♔Today at 10:13 PM
+@Emoko شكرا
+RAIVOToday at 10:13 PM
+@D7oM. 
+client.on('message', ( message ) => {
+  if(message.author.bot) return;
+
+  if(message.channel.id !== 'ID') return;
+
+
+  let types = [
+    'jpg',
+    'jpeg',
+    'png'
+  ]
+
+  if (message.attachments.size <= 0) {
+    message.delete();
+    message.channel.send(`${message.author}, This channel for Pic 🖼️ Only`) // 
+    .then(msg => {
+      setTimeout(() => {
+        msg.delete();
+      }, 5000)
+  })
+  return;
+}
+
+  if(message.attachments.size >= 1) {
+    let filename = message.attachments.first().filename
+    console.log(filename);
+    if(!types.some( type => filename.endsWith(type) )) {
+      message.delete();
+      message.channel.send(`${message.author}, This channel for Pic 🖼️ Only`)
+      .then(msg => {
+        setTimeout(() => {
+          msg.delete();
+        }, 5000)
+      })
+    }
   }
-	
+
+});
+
 client.login(process.env.BOT_TOKEN);
