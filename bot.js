@@ -205,7 +205,7 @@ const Sra7a = [
  }
 });
 const adminprefix = "#";
-const devs = ['312992639395954689',''];
+const dev = ['312992639395954689',''];
 client.on('message', message => {
   var argresult = message.content.split(` `).slice(1).join(' ');
     if (!devs.includes(message.author.id)) return;
