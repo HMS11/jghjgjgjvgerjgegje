@@ -260,4 +260,12 @@ if(!xp[message.author.id]){
 }
 });
 
+client.on('message', message => {
+    if (message.content.startsWith("invites")) {
+
+    message.guild.fetchInvites()
+    .then(invites => message.channel.send(`**:busts_in_silhouette:  اتيت ب     [${invites.find(invite => invite.inviter.id === message.author.id)}]    :calling:   عضو لهذا السيرفر    `))
+         
+    }
+
 client.login(process.env.BOT_TOKEN);
