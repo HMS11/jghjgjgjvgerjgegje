@@ -235,7 +235,7 @@ client.on('message', message => {
     let cmd = messageArray[0];
     let args = messageArray.slice(0);
     let prefix = '#';
-    let xp = require(".xp.json");
+ 
     
 if(cmd === `${prefix}level`) {
 if(!xp[message.author.id]){
