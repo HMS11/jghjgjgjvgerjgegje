@@ -211,63 +211,6 @@ if (message.content.startsWith(adminprefix + 'setT')) {
 
 });
 
-
-client.on('message', message => {
-        var prefix = "#";
-        if(message.content.startsWith(prefix + 'mutevoice')) {
-          if(!message.member.hasPermission("MUTE_MEMBERS")) return message.channel.sendMessage("**ليس لديك صلاحية لاعطاء ميوت صوتي**❌ ").then(m => m.delete(5000));
-          if(!message.guild.member(client.user).hasPermission("MUTE_MEMBERS")) return message.reply("**I Don't Have `MUTE_MEMBERS` Permission**").then(msg => msg.delete(6000))
-           
-        if(message.mentions.users.size === 0) {
-          return message.reply("Please mention a user to mute.");
-        }
-        let muteMember = message.guild.member(message.mentions.users.first());
-        if(!muteMember) {
-          return message.reply("Try again.");
-        }
-        muteMember.setMute(true);
-        if(muteMember) {
-          message.channel.sendMessage("User muted successfully.");
-        }
-      }
-    });
-
-lient.on('message', message => {
-      var prefix = "#";
-      if(message.content.startsWith(prefix + 'unmutevoice')) {
-        if(!message.member.hasPermission("MUTE_MEMBERS")) return message.channel.sendMessage("**ليس لديك صلاحية لاعطاء ميوت صوتي**❌ ").then(m => m.delete(5000));
-        if(!message.guild.member(client.user).hasPermission("MUTE_MEMBERS")) return message.reply("**I Don't Have `MUTE_MEMBERS` Permission**").then(msg => msg.delete(6000))
-         
-      if(message.mentions.users.size === 0) {
-        return message.reply("Please mention a user to mute.");
-      }
-      let muteMember = message.guild.member(message.mentions.users.first());
-      if(!muteMember) {
-        return message.reply("Try again.");
-      }
-      muteMember.setMute(false);
-      if(muteMember) {
-        message.channel.sendMessage("User muted successfully.");
-      }
-    }
-  });
-
-
-client.on('message', message => {
-    var args = message.content.split(/[ ]+/)
-    if(message.content.includes('discord.gg')){
-        message.delete()
-      message.channel.sendMessage("", {embed: {
-        title: "لا تنشر",
-        color: 0x06DF00,
-        description: "يمنع النشر في هذا السيرفر",
-        footer: {
-          text: "By Abo Khalil"
-        }
-      }}).then(msg => {msg.delete(3000)});
-                          }
-
-     
 }); 
 
 client.on('message', message => {
