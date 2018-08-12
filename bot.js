@@ -251,7 +251,7 @@ message.channel.send({embed});
 
 client.on('message', message => {
 
-    if (message.content === ".mutechannel") {
+    if (message.content === "+mutechannel") {
                         if(!message.channel.guild) return message.reply(' This command only for servers');
 
 if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply(' ليس لديك صلاحيات');
@@ -263,7 +263,7 @@ if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply(' لي
            });
              }
 //™¦༺♚ƙἶղց|MaS♚༺¦™#7105
-if (message.content === ".unmutechannel") {
+if (message.content === "+unmutechannel") {
     if(!message.channel.guild) return message.reply(' This command only for servers');
 
 if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('ليس لديك صلاحيات');
@@ -280,7 +280,7 @@ if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('لي�
 });
 
 client.on('message', message => {
-if (message.content.startsWith("ban")) {
+if (message.content.startsWith("+ban")) {
     var mention = message.mentions.members.first();
     if(!mention) return message.channel.send("يجب منشن العضو");
 
@@ -289,5 +289,6 @@ if (message.content.startsWith("ban")) {
     message.channel.send("تم أعطاء باند الى : " + mention.tag);
 };
 });
+
 
 client.login(process.env.BOT_TOKEN);
