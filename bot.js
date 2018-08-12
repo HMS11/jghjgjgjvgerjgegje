@@ -29,7 +29,7 @@ client.user.setGame(`Nothing`,"http://twitch.tv/S-F")
 });
 
 
-const devs = ['' , 'ايدي اونر البوث الثاني' , '312992639395954689' , ''];
+const dev = ['' , 'ايدي اونر البوث الثاني' , '312992639395954689' , ''];
 client.on('message', message => {
 var prefix = "+";
   if (!message.content.startsWith(prefix)) return;
