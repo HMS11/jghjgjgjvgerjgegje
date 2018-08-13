@@ -346,4 +346,19 @@ client.on('message', message => {
 });
 
 
+client.on('guildMemberAdd', member => {
+    var embed = new Discord.RichEmbed()
+    .setAuthor(member.user.username, member.user.avatarURL)
+    .setThumbnail(member.user.avatarURL)
+    .setTitle(`**New Fríend**`)
+    .setDescription(`**WELCOME TO Fríends**`)
+    .addField(' :bust_in_silhouette:  انت رقم',`**[ ${member.guild.memberCount} ]**`,true)
+    .setColor('GREEN')
+
+var channel =member.guild.channels.find('name', 'friends')
+if (!channel) return;
+channel.send({embed : embed});
+})
+
+
 client.login(process.env.BOT_TOKEN);
