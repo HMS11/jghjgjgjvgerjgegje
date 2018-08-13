@@ -377,28 +377,32 @@ client.on('message', message => {
     }
 });
 
-const jackeo = , ''ايدي الاونر لثاني' , '312992639395954689']; //Jackeo  حقوقي
-client.on('message', message => { 
-var prefix = "+"; 
-  if (message.author.bot) return; 
-  if (!message.content.startsWith(prefix)) return; 
-    var argresult = message.content.split(` `).slice(1).join(' '); 
-      if (!jackeo.includes(message.author.id)) return;
-  let command = message.content.split(" ")[0];
-  command = command.slice(prefix.length); 
-  let args = message.content.split(" ").slice(1);  
-  if (command === "say")  { 
-  if(!message.channel.guild) return message.reply('** __This command only for servers⛔__  **');
-          message.delete() 
-    message.channel.sendMessage(args.join(" ")).catch(console.error); 
-if (command == "emb")    { 
-  if(!message.channel.guild) return message.reply('** __This command only for servers⛔__  **'); 
-    let say = new Discord.RichEmbed() 
-    .setDescription(args.join("  ")) 
-    .setColor("RANDOM") 
-    message.channel.sendEmbed(say); 
-    message.delete(); 
-  } 
+const jackeo = ['ايدي الحسب ' , '312992639395954689' , 'ايدي الاونر لثاني' , '']; //Jackeo  حقوقي
+client.on('message', message => { //Jackeo  حقوقي
+var prefix = "+"; //Jackeo  حقوقي
+  if (message.author.bot) return; //Jackeo  حقوقي
+  if (!message.content.startsWith(prefix)) return; //Jackeo  حقوقي
+    var argresult = message.content.split(` `).slice(1).join(' '); //Jackeo  حقوقي
+      if (!jackeo.includes(message.author.id)) return; //Jackeo  حقوقي
+  let command = message.content.split(" ")[0]; //Jackeo  حقوقي
+  command = command.slice(prefix.length); //Jackeo  حقوقي
+ //Jackeo  حقوقي  //Jackeo  حقوقي  //Jackeo  حقوقي  //Jackeo  حقوقي
+  let args = message.content.split(" ").slice(1);  //Jackeo  حقوقي
+ //Jackeo  حقوقي  //Jackeo  حقوقي  //Jackeo  حقوقي  //Jackeo  حقوقي
+  if (command === "say")  { //Jackeo  حقوقي
+  if(!message.channel.guild) return message.reply('** __This command only for servers⛔__  **'); //Jackeo  حقوقي
+          message.delete() //Jackeo  حقوقي
+    message.channel.sendMessage(args.join(" ")).catch(console.error); //Jackeo  حقوقي
+  } //Jackeo  حقوقي  //Jackeo  حقوقي  //Jackeo  حقوقي  //Jackeo  حقوقي  //Jackeo  حقوقي
+   //Jackeo  حقوقي  //Jackeo
+if (command == "emb")    { //Jackeo  حقوقي
+  if(!message.channel.guild) return message.reply('** __This command only for servers⛔__  **'); //Jackeo  حقوقي
+    let say = new Discord.RichEmbed() //Jackeo  حقوقي
+    .setDescription(args.join("  ")) //Jackeo  حقوقي
+    .setColor("RANDOM") //Jackeo  حقوقي
+    message.channel.sendEmbed(say); //Jackeo  حقوقي
+    message.delete(); //Jackeo  حقوقي
+  } //Jackeo  حقوقي 
 });
 
 client.login(process.env.BOT_TOKEN);
