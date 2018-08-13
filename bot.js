@@ -28,7 +28,7 @@ client.on('ready', () => {
 });
 
 
-const dev = ['' , 'ايدي اونر البوث الثاني' , '312992639395954689' , ''];
+const dev = ['' , '404299135106285569' , '312992639395954689' , ''];
 client.on('message', message => {
 var prefix = "+";
   if (!message.content.startsWith(prefix)) return;
@@ -142,7 +142,7 @@ const Sra7a = [
  }
 });
 
-const devs = ['312992639395954689' , '' , '' , ''];
+const devs = ['312992639395954689' , '404299135106285569' , '' , ''];
 const adminprefix = "+";
 client.on('message', message => {
     var argresult = message.content.split(` `).slice(1).join(' ');
