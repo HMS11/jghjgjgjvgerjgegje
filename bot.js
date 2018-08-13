@@ -333,13 +333,13 @@ client.on('message', message => {
                 .setAuthor(message.guild.name, message.guild.iconURL)
         .setDescription(`
 **
----------------------
+:airplane:
 -[${message.guild.name}]  هذا هو رابط سيرفر
----------------------
+
 -هذا الرابط صالح ل 100 مستخدم فقط
----------------------
+:heart:
 -هذا الرابط صالح لمده 24 ساعه فقط
----------------------
+
 **`)
       message.author.sendEmbed(Embed11)
     }
