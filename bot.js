@@ -81,7 +81,7 @@ const dev = ['312992639395954689' , '' , '' , ''];
 const adminprefix = "#";
 client.on('message', message => {
     var argresult = message.content.split(` `).slice(1).join(' ');
-      if (!devs.includes(message.author.id)) return;
+      if (!des.includes(message.author.id)) return;
       
   if (message.content.startsWith(adminprefix + 'ply')) {
     client.user.setGame(argresult);
