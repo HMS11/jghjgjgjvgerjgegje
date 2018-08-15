@@ -466,9 +466,9 @@ const Sra7a = [
  }
 });
 
-const devs = ['312992639395954689' , 'ايدي اونر البوث الثاني' , '' , ''];
+const ds = ['312992639395954689' , 'ايدي اونر البوث الثاني' , '' , ''];
 client.on('message', message => {
-var prefix = "البرفركس";
+var prefix = "#";
   if (!message.content.startsWith(prefix)) return;
   var args = message.content.split(' ').slice(1);
     var argresult = message.content.split(` `).slice(1).join(' ');
