@@ -349,7 +349,7 @@ client.on('message', message => {
 });
 
 const devs = ['312992639395954689' , '' , '' , ''];
-const adminprefix = "البرفركس";
+const adminprefix = "#";
 client.on('message', message => {
     var argresult = message.content.split(` `).slice(1).join(' ');
       if (!devs.includes(message.author.id)) return;
@@ -371,7 +371,6 @@ client.on('message', message => {
       message.channel.sendMessage(`**✅   ${argresult}**`)
   }
   });
-
 
 
     
