@@ -445,37 +445,6 @@ client.on('message', message => {
 			dontSendBC.on('collect', r => {
 				msg.delete();
 				message.reply(':white_check_mark: **تم الغاء ارسال رسالتك بنجاح**').then(msg => msg.delete(5000));
-			});
-		})
-	}
-});
-
-client.on('message',message =>{
-    var prefix = "+";
-    if(message.content.startsWith(prefix + 'top')) {
-  message.guild.fetchInvites().then(i =>{
-  var invites = [];
-   
-  i.forEach(inv =>{
-    var [invs,i]=[{},null];
-     
-    if(inv.maxUses){
-        invs[inv.code] =+ inv.uses+"/"+inv.maxUses;
-    }else{
-        invs[inv.code] =+ inv.uses;
-    }
-        invites.push(`invite: ${inv.url} inviter: ${inv.inviter} \`${invs[inv.code]}\`;`);
-   
-  });
-  var embed = new Discord.RichEmbed()
-  .setColor("#000000")
-  .setDescription(`${invites.join(`\n`)+'\n\n**By:** '+message.author}`)
-  .setThumbnail("")
-           message.channel.send({ embed: embed });
-   
-  });
-   
-  
-
+                        });
 
 client.login(process.env.BOT_TOKEN);
