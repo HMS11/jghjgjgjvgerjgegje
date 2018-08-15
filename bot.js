@@ -490,17 +490,7 @@ if (message.content.startsWith('#saraha')) {
   message.react("??")
 }
 
-client.on('message', message => {
-  if (!message.content.startsWith(prefix)) return;
-  const verifed = ["ايدي حقك"];
-if (message.content.startsWith(prefix + 'ownerbot')) {
-    if(!message.channel.guild) return;
-if( verifed.some(word => message.author.id.includes(word)) ) {    return message.channel.sendMessage("**انت صاحب البوت **")
-} else {
-   message.reply("**اجا صاحب البوت**");   
-}
-}
-});
+
     
    
 client.login(process.env.BOT_TOKEN);
