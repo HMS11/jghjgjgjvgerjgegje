@@ -486,9 +486,9 @@ if (message.content.startsWith(prefix + 'setavatar')) {
 }
 });
 
-const Discord = require('discor.js');
+const Discord = require('disco.js');
 
-const Util = require('discrd.js');
+const Util = require('discor.js');
 
 const getYoutubeID = require('get-youtube-id');
 
