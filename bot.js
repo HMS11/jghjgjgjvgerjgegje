@@ -506,7 +506,6 @@ const getYoutubeID = require('get-youtube-id');
 const fetchVideoInfo = require('youtube-info');
 
 const yt_api_key = "AIzaSyDeoIH0u1e72AtfpwSKKOSy3IPp2UHzqi4";
-const prefix = '#';
 client.on('ready', function() {
     console.log(`i am ready ${client.user.username}`);
 });
@@ -598,7 +597,7 @@ client.on('message', function(message) {
                     message.channel.sendEmbed(play_info)
                message.channel.send(`
                          **Playing :notes:**  **${videoInfo.title}**`)
-                    // client.user.setGame(videoInfo.title,'https://www.twitch.tv/Abdulmohsen');
+                     client.user.setGame(videoInfo.title,'https://www.twitch.tv/Abdulmohsen');
                 });
             });
         }
@@ -731,6 +730,22 @@ function isYoutube(str) {
 
 
 
+
+
+client.on('message', message => {
+                                if(!message.channel.guild) return;
+                        if (message.content.startsWith('#ping')) {
+                            if(!message.channel.guild) return;
+                            var msg = `${Date.now() - message.createdTimestamp}`
+                            var api = `${Math.round(client.ping)}`
+                            if (message.author.bot) return;
+                        let embed = new Discord.RichEmbed()
+                        .setAuthor(message.author.username,message.author.avatarURL)
+                        .setColor('RANDOM')
+                        .addField('**PING :**',api + " ms ⚡ ")
+         message.channel.send({embed:embed});
+                        }
+                    });
 
 
 
