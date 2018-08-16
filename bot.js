@@ -850,19 +850,5 @@ const Sra7a = [
      '‏صراحه  |  ما اكثر شي ندمن عليه؟',
 	 'صراحه  |  ما هي أمنياتك المُستقبلية؟‏',
 ]
-   client.on('message', message => {
- if (message.content.startsWith(prefix + 'saraha')) {
-     if(!message.channel.guild) return message.reply('** This command only for servers **');
-  var client= new Discord.RichEmbed()
-  .setTitle("لعبة صراحة ..")
-  .setColor('RANDOM')
-  .setDescription(`${Sra7a[Math.floor(Math.random() * Sra7a.length)]}`)
-  .setImage("https://cdn.discordapp.com/attachments/371269161470525444/384103927060234242/125.png")
-                  .setTimestamp()
-
-   message.channel.sendEmbed(client);
-   message.react("🤔")
- }
-});
-
+ 
 client.login(process.env.BOT_TOKEN);
