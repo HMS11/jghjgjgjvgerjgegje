@@ -13,111 +13,114 @@ client.on('message', msg => {
 });
 
 
-client.on('message',message =>{
-    var prefix = "#";
-    if(message.content.startsWith(prefix + 'top')) {
-  message.guild.fetchInvites().then(i =>{
-  var invites = [];
-   
-  i.forEach(inv =>{
-    var [invs,i]=[{},null];
-     
-    if(inv.maxUses){
-        invs[inv.code] =+ inv.uses+"/"+inv.maxUses;
-    }else{
-        invs[inv.code] =+ inv.uses;
-    }
-        invites.push(`invite: ${inv.url} inviter: ${inv.inviter} \`${invs[inv.code]}\`;`);
-   
+client.on('message', msg => {
+  if (msg.content === 'السعودية') {      
+    msg.react("🇸🇦")
+    msg.channel.send("🇸🇦")
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'مصر') {      
+    msg.react("🇪🇬")
+    msg.channel.send("🇪🇬")
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'المغرب') {      
+    msg.react("🇲🇦")
+    msg.channel.send("🇲🇦")
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'العراق') {      
+    msg.react("🇮🇶")
+    msg.channel.send("🇮🇶")
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'الجزائر') {      
+    msg.react("🇩🇿")
+    msg.channel.send("🇩🇿")
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'الامارات') {      
+    msg.react("🇦🇪")
+    msg.channel.send("🇦🇪")
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'تونس') {      
+    msg.react("🇹🇳")
+    msg.channel.send("🇹🇳")
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'سوريا') {      
+    msg.react("🇸🇾")
+    msg.channel.send("🇸🇾")
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'ليبيا') {      
+    msg.react("🇱🇾")
+    msg.channel.send("🇱🇾")
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'قطر') {      
+    msg.react("🇶🇦")
+    msg.channel.send("🇶🇦")
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'الصومال') {      
+    msg.react("🇸🇴")
+    msg.channel.send("🇸🇴")
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'عمان') {      
+    msg.react("🇴🇲")
+    msg.channel.send("🇴🇲")
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'موريتانيا') {      
+    msg.react("🇲🇷")
+    msg.channel.send("🇲🇷")
+  }
+});
+
+client.on('message', async function (message)  {
+if(message.content.startsWith(prefix+"server")) {
+const vlevel = ['None', 'Low (Must have verified email)', 'Medium (Must be register for 5 mineuts)', 'High (Need to wait 10 minutes)', 'Very High (Need verified phone on account)']
+const members = await message.guild.members.filter(m=> m.presence.status === 'online').size + message.guild.members.filter(m=> m.presence.status === 'idle').size + message.guild.members.filter(m=> m.presence.status === 'dnd').size  
+message.channel.send(new discord.RichEmbed() 
+.setAuthor(`${message.guild.name} [Server Icon URL]`, message.guild.iconURL)
+.setURL(message.guild.iconURL)
+.addField('🆔 ايدي السيرفر', message.guild.id, true)
+.addField('👑 اونر السيرفر', message.guild.owner, true)
+.addField('🗺 منطقة', message.guild.region, true)
+.addField(`👥 الاعضاء [${message.guild.memberCount}]`, `${members} online` ,true)
+.addField(`💬 القنوات`, `**${message.guild.channels.filter(c => c.type === 'category').size}** الاقسام | **${message.guild.channels.filter(c=> c.type === 'text').size}**روم كتابي | **${message.guild.channels.filter(c=> c.type === 'voice').size}** روم صوتي` ,true)
+.addField(`💠 مستوى التحقق`, vlevel[message.guild.verificationLevel] ,true)
+.addField(`👔 الرتب`, message.guild.roles.size ,true)
+.addField(`📆 تم انشأوها`, message.guild.createdAt ,true)
+)
+}
   });
-  var embed = new Discord.RichEmbed()
-  .setColor("#000000")
-  .setDescription(`${invites.join(`\n`)+'\n\n**By:** '+message.author}`)
-  .setThumbnail("https://media.discordapp.net/attachments/477570106755383307/479229377037598720/22713057_151850495552450_709700562_o.jpg?width=201&height=201")
-           message.channel.send({ embed: embed });
-   
-  });
-   
-    }
-  });
-
-client.on('message', message => {
-
-              if(!message.channel.guild) return;
-
-    var prefix = "#";
-
-    if(message.content.startsWith('#bc')) {
-
-    if(!message.channel.guild) return message.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
-
-  if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**للأسف لا تمتلك صلاحية** `ADMINISTRATOR`' );
-
-    let args = message.content.split(" ").join(" ").slice(2 + prefix.length);
-
-
-    let request = `Requested By ${message.author.username}`;
-
-    if (!args) return message.reply('**اكتب شي لي ارسال البرودكاست**');message.channel.send(`**هل أنت متأكد من إرسالك البرودكاست؟ \nمحتوى البرودكاست:** \` ${args}\``).then(msg => {
-
-    msg.react('✅')
-
-    .then(() => msg.react('❌'))
-
-    .then(() =>msg.react('✅'))
-
-    let reaction1Filter = (reaction, user) => reaction.emoji.name === '✅' && user.id === message.author.id;
-
-    let reaction2Filter = (reaction, user) => reaction.emoji.name === '❌' && user.id === message.author.id;
-
-       let reaction1 = msg.createReactionCollector(reaction1Filter, { time: 12000 });
-
-    let reaction2 = msg.createReactionCollector(reaction2Filter, { time: 12000 });
-
-    reaction1.on("collect", r => {
-
-    message.channel.send(`☑ | Done ... The Broadcast Message Has Been Sent For ${message.guild.members.size} Members`).then(m => m.delete(5000));
-
-    message.guild.members.forEach(m => {
-
-    var bc = new
-
-       Discord.RichEmbed()
-
-       .setColor('RANDOM')
-
-         .setTitle('لي دخول السيرفر اضغط هنا')
-       
-       .setURL('حط رابط سيرفرك')
-
-       .addField('Server', message.guild.name)
-
-       .addField('Sender', message.author.username)
-
-       .addField('Message', args)
-
-    m.send({ embed: bc })
-
-    msg.delete();
-
-    })
-
-    })
-
-    reaction2.on("collect", r => {
-
-    message.channel.send(`**Broadcast Canceled.**`).then(m => m.delete(5000));
-
-    msg.delete();
-
-    })
-
-    })
-
-    }
-
-    });  
-
-
 
 client.login(process.env.BOT_TOKEN);
