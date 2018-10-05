@@ -45,7 +45,7 @@ client.on('message', message => {
 
               if(!message.channel.guild) return;
 
-    var prefix = "بيرفكس البوت";
+    var prefix = "#";
 
     if(message.content.startsWith('#bc')) {
 
